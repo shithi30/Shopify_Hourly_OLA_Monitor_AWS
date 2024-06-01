@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 ## Ushopbd
 
 # import
@@ -166,10 +163,4 @@ if len(oos + ats) > 0: newmail.Send()
 # stats
 display(ola_df_pres.head(5))
 print("Elapsed time to report (sec): " + str(round(time.time() - start_time)))
-
-
-# In[ ]:
-
-
-
 
