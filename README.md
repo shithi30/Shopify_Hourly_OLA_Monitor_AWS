@@ -12,6 +12,6 @@ Tech Stack (Amazon Web Services - <strong>AWS</strong>):  ```DynamoDB``` ```Lamb
 - <strong>Key-value</strong> storage design helped perform simple, de-duplicated insertions and updates of SKUs.
 - <strong>Flexible schema</strong> helped handle offers, discounts - since not all SKUs have them live always.
 - <strong>TTL (Time-to-Live)</strong> kept database updated, with periodical deletion of outdated SKU's data.
-- <strong>CloudWatch Log Stream</strong> monitoring triggered Lambda function, to notify (email) OOS/ATS-events.
+- <strong>CloudWatch Log Stream Monitoring</strong> triggered Lambda function, to notify (email) OOS/ATS-events.
 - Enabling <strong>Global Secondary Index (GSI)</strong> helped query faster on timestamp data (not primary key).
 
