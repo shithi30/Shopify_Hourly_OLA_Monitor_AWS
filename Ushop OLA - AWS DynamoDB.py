@@ -86,3 +86,5 @@ ushop_tbl.put_item(Item = {"sku": "EOF", "report_time": report_time})
 # stats
 print("Live SKUs found: " + str(len(skus)))
 print("Data pulled at: " + report_time)
+
+
