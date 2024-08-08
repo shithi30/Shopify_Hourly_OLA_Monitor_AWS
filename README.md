@@ -11,7 +11,7 @@ Tech Stack (Amazon Web Services - <strong>AWS</strong>):  ```DynamoDB``` ```Lamb
 ### Why DynamoDB?
 - <strong>Key-Value Storage Design</strong> helped perform simple, de-duplicated insertions (+ updates) of SKUs.
 - <strong>Flexible Schema</strong> helped handle offers, discounts - since not all SKUs have them live always.
-- <strong>TTL (Time-to-Live)</strong> helped keep database updated, with periodical deletion of outdated SKU's data.
+- <strong>TTL (Time-to-Live)</strong> helped (periodically) delete outdated SKU's data, plus optimize resource utilization.
 - <strong>CloudWatch Log Stream Monitoring</strong> triggered the <strong>Lambda Function</strong>, to notify (email) OOS/ATS-events.
 - Enabling <strong>Global Secondary Index (GSI)</strong> helped query faster on timestamp (not primary key), to identify OOS.
 
