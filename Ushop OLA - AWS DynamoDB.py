@@ -4,6 +4,7 @@
 # import
 from selenium import webdriver
 from bs4 import BeautifulSoup
+import os
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
 from datetime import datetime
@@ -13,8 +14,8 @@ import time
 dynamo_resource = boto3.resource (
     service_name = "dynamodb", 
     region_name = "ca-central-1", 
-    aws_access_key_id = "AKIAQKPILQKKQBD44FDO", 
-    aws_secret_access_key = "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"
+    aws_access_key_id = os.getenv("AWS_ACC"), 
+    aws_secret_access_key = os.getenv("AWS_SEC")
 )
 
 # table
