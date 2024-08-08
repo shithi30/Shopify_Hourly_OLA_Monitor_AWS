@@ -1,6 +1,6 @@
 This is a notifier developed for Unilever BD, alerting on Out-of-Stock (OOS) and Addition-to-Stock (ATS) situations.
 <br>
-<strong>Tech Stack (Amazon Web Services - AWS):</strong> ```DynamoDB``` ```Lambda``` ```CloudWatch``` ```Python Boto3``` ```smtplib```
+Tech Stack (Amazon Web Services - <strong>AWS</strong>):  ```DynamoDB``` ```Lambda``` ```CloudWatch``` ```Python Boto3``` ```smtplib```
 
 ### Output Notifications 
 <p align="center">
