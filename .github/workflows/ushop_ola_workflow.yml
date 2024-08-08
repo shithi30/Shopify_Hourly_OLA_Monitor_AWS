@@ -1,7 +1,9 @@
-name: Populate USHOP Listings
+name: Populate USHOP Listings Data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 10 * * *"    
     
 jobs:
   scrape:
