@@ -2,6 +2,8 @@
 # coding: utf-8
 
 # import
+from pyvirtualdisplay import Display
+import chromedriver_autoinstaller
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
@@ -22,8 +24,11 @@ dynamo_resource = boto3.resource (
 ushop_tbl = dynamo_resource.Table("ushop_ola")
 print(ushop_tbl.table_status)
 
-# pref.
+# setup
+Display(visible = 0, size = (1920, 1080)).start() 
 options = webdriver.ChromeOptions()
+
+# pref.
 options.add_argument("ignore-certificate-errors")
 options.add_argument("headless")
 
