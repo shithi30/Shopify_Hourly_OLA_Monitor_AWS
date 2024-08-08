@@ -1,0 +1,33 @@
+name: Populate USHOP Listings
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checking out repo
+      uses: actions/checkout@v3
+      
+    - name: Setting up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11.7"
+        
+    - name: Removing previous Chrome
+      run: sudo apt purge google-chrome-stable  
+  
+    - name: Installing packages
+      run: pip install selenium beautifulsoup4 pyvirtualdisplay boto3
+      
+    - name: Installing xvfb
+      run: sudo apt-get install xvfb
+
+    - name: Running Python script
+      env:  
+          AWS_ACC: ${{ secrets.AWS_ACC }}
+          AWS_SEC: ${{ secrets.AWS_SEC }}
+      run: python "Ushop OLA - AWS DynamoDB.py"
+      
