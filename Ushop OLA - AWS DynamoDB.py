@@ -3,7 +3,6 @@
 
 # import
 from pyvirtualdisplay import Display
-import chromedriver_autoinstaller
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
@@ -26,11 +25,7 @@ print(ushop_tbl.table_status)
 
 # setup
 Display(visible = 0, size = (1920, 1080)).start() 
-options = webdriver.ChromeOptions()
-
-# pref.
-options.add_argument("ignore-certificate-errors")
-options.add_argument("headless")
+options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
 
 # open window
 driver = webdriver.Chrome(options = options)
