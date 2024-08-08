@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 # import
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -11,10 +8,6 @@ import boto3
 from boto3.dynamodb.conditions import Key, Attr
 from datetime import datetime
 import time
-
-
-# In[2]:
-
 
 # session
 dynamo_resource = boto3.resource (
@@ -27,10 +20,6 @@ dynamo_resource = boto3.resource (
 # table
 ushop_tbl = dynamo_resource.Table("ushop_ola")
 print(ushop_tbl.table_status)
-
-
-# In[3]:
-
 
 # pref.
 options = webdriver.ChromeOptions()
@@ -91,24 +80,9 @@ while(1):
 # close window
 driver.close()
 
-
-# In[4]:
-
-
 # mark EOF
 ushop_tbl.put_item(Item = {"sku": "EOF", "report_time": report_time})
-
-
-# In[5]:
-
 
 # stats
 print("Live SKUs found: " + str(len(skus)))
 print("Data pulled at: " + report_time)
-
-
-# In[ ]:
-
-
-
-
