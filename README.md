@@ -9,9 +9,9 @@ Tech Stack (Amazon Web Services - <strong>AWS</strong>):  ```DynamoDB``` ```Lamb
 </p>
 
 ### Why DynamoDB?
-- <strong>Key-value</strong> storage design helped perform simple, de-duplicated insertions and updates of SKUs.
-- <strong>Flexible schema</strong> helped handle offers, discounts - since not all SKUs have them live always.
-- <strong>TTL (Time-to-Live)</strong> kept database updated, with periodical deletion of outdated SKU's data.
-- <strong>CloudWatch Log Stream Monitoring</strong> triggered Lambda function, to notify (email) OOS/ATS-events.
-- Enabling <strong>Global Secondary Index (GSI)</strong> helped query faster on timestamp data (not primary key).
+- <strong>Key-Value Storage Design</strong> helped perform simple, de-duplicated insertions (+ updates) of SKUs.
+- <strong>Flexible Schema</strong> helped handle offers, discounts - since not all SKUs have them live always.
+- <strong>TTL (Time-to-Live)</strong> helped keep database updated, with periodical deletion of outdated SKU's data.
+- <strong>CloudWatch Log Stream Monitoring</strong> triggered the <strong>Lambda Function</strong>, to notify (email) OOS/ATS-events.
+- Enabling <strong>Global Secondary Index (GSI)</strong> helped query faster on timestamp (not primary key), to identify OOS.
 
